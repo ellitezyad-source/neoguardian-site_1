@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NeoGuardian</title>
+<meta name="description" content="NeoGuardian listens to newborns, rates how urgent each cry is, and tells the nurse what to check first.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<meta name="theme-color" content="#0E2F5E">
+<link rel="icon" href="favicon.ico" sizes="32x32">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Main">
+    <a class="logo" href="#top" aria-label="NeoGuardian home">
+      <span>NE</span>
+      <svg width="40" height="40" viewBox="0 0 40 40" role="img" aria-label="O with a sleeping baby inside">
+        <defs><clipPath id="logo-o-clip"><circle cx="20" cy="20" r="15"/></clipPath></defs>
+        <circle cx="20" cy="20" r="17" fill="#fff" stroke="#0A1430" stroke-width="4"/>
+        <g clip-path="url(#logo-o-clip)"><path d="M5 40V31.5C5 25.5 12 22.5 20 22.5S35 25.5 35 31.5V40Z" fill="#A9C4E2" stroke="#0A1430" stroke-width="2.5" stroke-linejoin="round"/></g>
+        <circle cx="20" cy="16" r="6.2" fill="#fff" stroke="#0A1430" stroke-width="2.5"/>
+        <path d="M16.9 15q1.3 1.2 2.6 0M20.5 15q1.3 1.2 2.6 0M19 18.6q1 .8 2 0M20 9.9c0-1.8 2.3-1.8 2.2-.2" fill="none" stroke="#0A1430" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <span>GUARDIAN</span>
+    </a>
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="#0A1430" stroke-width="3" stroke-linecap="round"/></svg>
+    </button>
+    <div class="nav-links" id="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#system">System</a>
+      <a href="#results">Results</a>
+      <a href="#team">Team</a>
+      <a class="btn btn-dark btn-small" href="#dashboard">Nurse dashboard</a>
+    </div>
+  </nav>
+</header>
+
+<main id="content">
+
+<!-- ================= HOME VIEW ================= -->
+<div id="view-home">
+
+  <section class="hero" id="top">
+    <svg class="hero-swirls" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path d="M-40 520 C 200 380, 380 640, 620 470 S 1040 300, 1480 430" fill="none" stroke="#fff" stroke-opacity=".10" stroke-width="40"/>
+      <path d="M-40 140 C 260 40, 420 260, 700 150 S 1100 -20, 1480 120" fill="none" stroke="#fff" stroke-opacity=".07" stroke-width="28"/>
+      <path d="M900 640 C 980 520, 1160 520, 1220 420 S 1400 260, 1480 300" fill="none" stroke="#A9C4E2" stroke-opacity=".18" stroke-width="18"/>
+      <circle cx="1240" cy="140" r="90" fill="none" stroke="#A9C4E2" stroke-opacity=".16" stroke-width="14"/>
+      <circle cx="1240" cy="140" r="48" fill="none" stroke="#A9C4E2" stroke-opacity=".12" stroke-width="10"/>
+    </svg>
+    <div class="wrap hero-inner">
+      <div class="hero-text">
+        <span class="pill">CAPSTONE 2026–2027 · ALEXANDRIA STEM SCHOOL</span>
+        <h1>Every cry heard.<br>Every second counts.</h1>
+        <p>NeoGuardian listens to newborns in the ward, tells the nurse how urgent each cry is, and suggests what to check first — using feed and diaper times, not guesses.</p>
+        <div class="hero-actions">
+          <a class="btn" href="#how">See how it works</a>
+          <a class="btn btn-blue" href="#dashboard">Open nurse dashboard</a>
+        </div>
+      </div>
+      <div class="hero-cards" aria-label="Example alerts">
+        <div class="alert">
+          <div class="alert-head"><span class="alert-title">Bed 3 · Baby B3</span><span class="pill red">URGENT</span></div>
+          <p><b>Urgent cry detected · AI urgency 82%</b></p>
+          <p class="muted">Also check: maybe hungry — last fed 2.8 h ago</p>
+          <div class="row"><button class="sq dark" type="button">On my way</button><button class="sq" type="button">Resolved</button></div>
+        </div>
+        <div class="alert alert-mini">
+          <div><div class="alert-title" style="font-size:18px">Bed 5 · Baby B5</div><div class="muted">Just fed: maybe needs burping</div></div>
+          <span class="pill yellow">NOT URGENT</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section">
+    <div class="grid g2">
+      <div class="panel"><span class="panel-label">THE PROBLEM</span>
+        <p>In a newborn ward, one nurse may look after many babies at the same time. A cry at the far end of the room can wait too long — and not every cry needs the same speed.</p>
+      </div>
+      <div class="panel"><span class="panel-label">OUR IDEA</span>
+        <p>NeoGuardian listens for the nurse. It hears a cry, rates how urgent it is, and sends one clear alert to her phone with what to check first.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section" id="how">
+    <div class="section-head">
+      <h2>Three layers, one alert</h2>
+      <p>Each layer answers one simple question, so nurses can trust and understand every alert.</p>
+    </div>
+    <div class="grid g3">
+      <div class="panel white layer"><span class="panel-label">LAYER 1</span>
+        <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 20v8M16 14v20M24 8v32M32 14v20M40 20v8" stroke="#0E2F5E" stroke-width="4" stroke-linecap="round"/></svg>
+        <h3>Is it a cry?</h3>
+        <p>A pretrained sound model (YAMNet) listens every half second and separates baby cries from talking, alarms and silence.</p>
+        <span class="chip">No training needed · AUC ≈ 0.97</span>
+      </div>
+      <div class="panel white layer"><span class="panel-label">LAYER 2</span>
+        <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6 L44 40 H4 Z" fill="none" stroke="#0E2F5E" stroke-width="4" stroke-linejoin="round"/><path d="M24 18v10" stroke="#0E2F5E" stroke-width="4" stroke-linecap="round"/><circle cx="24" cy="34" r="2.6" fill="#0E2F5E"/></svg>
+        <h3>How urgent?</h3>
+        <p>Two models vote — YAMNet and our own CNN — to rate the cry as urgent (pain, fear) or not urgent (needs).</p>
+        <span class="chip">Balanced accuracy ≈ 85% · locked test</span>
+      </div>
+      <div class="panel white layer"><span class="panel-label">LAYER 3</span>
+        <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="none" stroke="#0E2F5E" stroke-width="4"/><path d="M24 13v12l8 5" fill="none" stroke="#0E2F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>What to check first?</h3>
+        <p>Clear rules use the nurse's taps — time since the last feed and diaper change — to suggest a likely reason.</p>
+        <span class="chip">Every setting adjustable per baby</span>
+      </div>
+    </div>
+    <div class="safety">
+      <strong>SAFETY RULES</strong>
+      <span>Every cry alerts the nurse</span>
+      <span>AI unsure → treated as urgent</span>
+      <span>Long crying turns red</span>
+    </div>
+  </section>
+
+  <section class="wrap section" id="system">
+    <div class="section-head"><h2>From crib to nurse's phone</h2></div>
+    <div class="chain">
+      <span class="node">Baby</span><span aria-hidden="true">→</span>
+      <span class="node">Microphone</span><span aria-hidden="true">→</span>
+      <span class="node blue">Raspberry Pi Pico 2 W</span><span aria-hidden="true">→</span>
+      <span class="node">Wi-Fi</span><span aria-hidden="true">→</span>
+      <span class="node dark">Laptop AI server</span><span aria-hidden="true">→</span>
+      <span class="node">Nurse's phone</span>
+    </div>
+    <p class="chain-note center muted">Sound stays on the hospital's local network. No internet needed, and no baby audio sent to the cloud.</p>
+  </section>
+
+  <section class="wrap section" id="phone">
+    <div class="section-head"><h2>What the nurse sees</h2></div>
+    <div class="phone-row">
+      <div class="phone" aria-label="Phone alert example">
+        <div class="phone-top"><span>NEOGUARDIAN</span><span class="chip" style="font-family:var(--body);font-size:13px;padding:3px 10px;color:var(--ink);letter-spacing:0">Ward A</span></div>
+        <div class="phone-body">
+          <div class="baby red"><span class="pill red">URGENT · BED 1</span>
+            <div class="alert-title" style="font-size:24px">Urgent cry detected</div>
+            <div class="meter-label">Pain or fear likely · AI urgency 82%</div>
+            <div class="meter"><div style="width:82%"></div></div>
+            <div class="facts"><div class="fact"><small>LAST FED</small><b>2.8 h ago</b></div><div class="fact"><small>LAST DIAPER</small><b>1.1 h ago</b></div></div>
+            <div class="tip">Also check: maybe hungry</div>
+            <div class="baby-actions"><button class="sq dark" type="button">On my way</button><button class="sq" type="button">Resolved</button></div>
+          </div>
+        </div>
+      </div>
+      <ul class="phone-list">
+        <li><b>One alert per cry</b>, colored by urgency.</li>
+        <li><b>The likely reason</b> comes from feed and diaper times.</li>
+        <li><b>One tap</b> to say "On my way" or "Resolved".</li>
+        <li><a href="#dashboard">Try the live dashboard →</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="wrap section" id="results">
+    <div class="section-head">
+      <h2>Tested honestly</h2>
+      <p>Locked test: 122 recordings the model never saw.</p>
+    </div>
+    <div class="grid g4">
+      <div class="stat"><span class="stat-num">85%</span><span class="stat-label">Balanced accuracy (official)</span><span class="stat-sub">Clean final test · AUC 0.93 · target was 80% or more</span></div>
+      <div class="stat"><span class="stat-num">88%</span><span class="stat-label">Final model · second look</span><span class="stat-sub">Same 122 files · AUC 0.95 · not a clean test</span></div>
+      <div class="stat"><span class="stat-num">41/44</span><span class="stat-label">Urgent cries caught</span><span class="stat-sub">3 missed · 13 false alarms in 78 (final model)</span></div>
+      <div class="stat todo"><span class="stat-num">[__ s]</span><span class="stat-label">Cry to phone alert</span><span class="stat-sub">From 30 timed tests</span></div>
+    </div>
+    <div class="grid g2" style="margin-top:58px">
+      <div class="panel"><span class="panel-label">HONEST NOTES</span>
+        <ul>
+          <li>The test set is small, so the real value may be a few percent higher or lower.</li>
+          <li>The 88% number is a second look at the same test files, after we changed the model and chose its threshold on validation files. It is not a clean test, so the official result stays 85%.</li>
+          <li>Inside each single data source, balanced accuracy is about 80%. With 5-fold cross-validation on all data it is 84%.</li>
+          <li>Next step: a new clean test set of 50–100 cries before we claim any new number.</li>
+          <li>Near-duplicate recordings were found and kept in the same split, so the test never saw copies.</li>
+        </ul>
+      </div>
+      <div class="panel"><span class="panel-label">WHY URGENCY, NOT TRANSLATION</span>
+        <p>A 2024 study found that neither people nor AI could reliably tell <em>why</em> a baby cries from the sound alone — but a cry does show how distressed the baby is. So NeoGuardian rates urgency, and uses feed and diaper times for the likely reason.</p>
+        <p class="cite">Lockhart-Baron et al., Communications Psychology, 2024</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap section" id="team">
+    <div class="section-head"><h2>The team</h2></div>
+    <div class="grid g3" style="gap:24px">
+      <div class="member"><div class="avatar" aria-hidden="true">MS</div><span class="member-name">Mohamed Serag</span><span class="muted">[ROLE]</span></div>
+      <div class="member"><div class="avatar" aria-hidden="true">SH</div><span class="member-name">Sadin Hossam</span><span class="muted">[ROLE]</span></div>
+      <div class="member"><div class="avatar" aria-hidden="true">ZM</div><span class="member-name">Zyad Mohamed</span><span class="muted">[ROLE]</span></div>
+    </div>
+    <p class="center muted" style="margin-top:28px;font-size:17px">Alexandria STEM School · Grade 12 · Group 12324 · Semester 1, 2026–2027</p>
+  </section>
+</div>
+
+<!-- ================= DASHBOARD VIEW ================= -->
+<div id="view-dashboard" hidden>
+  <div class="dash-bar">
+    <div class="wrap dash-bar-inner">
+      <span class="pill" style="background:var(--panel)">Ward A · Newborn room</span>
+      <div class="dash-tools">
+        <span class="chip" id="conn">○ AI not connected</span>
+        <span class="dash-tools" id="api-box">
+          <input class="field" id="api-url" aria-label="AI server address" placeholder="http://127.0.0.1:5000" size="22">
+          <button class="sq" type="button" id="api-save">Connect</button>
+        </span>
+        <button class="sq" type="button" id="demo-btn" style="background:var(--panel)">Demo data</button>
+      </div>
+    </div>
+  </div>
+  <div class="wrap dash-main">
+    <div class="dash-summary" aria-live="polite">
+      <h1>Live alerts</h1>
+      <span class="count red" id="n-red">0 urgent</span>
+      <span class="count yellow" id="n-yellow">0 not urgent</span>
+      <span class="count" id="n-calm">0 calm</span>
+    </div>
+    <div class="babies" id="babies"></div>
+    <p class="rules">Bed 1 is connected to the real microphone; the other beds are locked until they get one. Rules: urgent if AI urgency is 59% or more; 49–58% counts as unsure and is treated as urgent; crying 5+ minutes turns red. Likely reason: fed 2+ h ago, diaper 3+ h ago, or fed in the last 30 min (burping). All settings can be changed by the hospital.</p>
+  </div>
+</div>
+
+<!-- ================= BED 1 VIEW ================= -->
+<div id="view-bed" hidden>
+  <div class="dash-bar">
+    <div class="wrap dash-bar-inner">
+      <a class="btn btn-small" href="#dashboard">← All beds</a>
+      <span class="pill" style="background:var(--panel)">Bed 1 · live</span>
+      <a class="sq" id="test-link" href="#" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;text-decoration:none">Open full AI test page</a>
+    </div>
+  </div>
+  <div class="wrap dash-main">
+    <div class="grid g2">
+      <div id="bed-card"></div>
+      <div class="panel"><span class="panel-label">LAST RECORDED SOUND</span>
+        <audio id="bed-audio" controls preload="none" style="width:100%" hidden></audio>
+        <p id="bed-audio-info" class="muted" style="margin-top:10px"></p>
+        <div id="bed-layers" class="layers-box"></div>
+      </div>
+    </div>
+    <div class="panel white chat"><span class="panel-label">ASSISTANT · WHAT SHOULD I DO?</span>
+      <div id="chat-log" class="chat-log" aria-live="polite"></div>
+      <div id="chat-quick" class="row"></div>
+      <div class="row"><input class="field" id="chat-input" placeholder="Ask, for example: baby won't stop crying" aria-label="Ask the assistant"><button class="sq dark" type="button" id="chat-send">Send</button></div>
+      <p class="muted" style="font-size:14px;margin-top:12px">Checklist helper for trained staff. Not a medical device. Follow the ward protocol.</p>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <div>
+      <div class="footer-brand">NEOGUARDIAN</div>
+      <div style="color:var(--pill)">Keywords: [X] · [X] · [X] · [X] · [X]</div>
+    </div>
+    <div class="footer-links">
+      <a href="#results">Literature cited</a>
+      <a href="https://drive.google.com">Project drive [LINK]</a>
+      <span>Contact: [EMAIL]</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
