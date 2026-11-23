@@ -18,6 +18,7 @@
 <a class="skip" href="#content">Skip to content</a>
 
 <header class="site-header">
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
   <nav class="wrap nav" aria-label="Main">
     <a class="logo" href="#top" aria-label="NeoGuardian home">
       <span>NE</span>
@@ -37,87 +38,101 @@
       <a href="#how">How it works</a>
       <a href="#system">System</a>
       <a href="#results">Results</a>
-      <a href="#team">Team</a>
-      <a class="btn btn-dark btn-small" href="#dashboard">Nurse dashboard</a>
+      <a href="#patients">Patients</a>
+      <a href="#dashboard">Dashboard</a>
+      <a class="btn btn-dark btn-small" id="nav-auth-btn" href="#auth">Sign in</a>
     </div>
   </nav>
 </header>
 
 <main id="content">
 
-<!-- ================= HOME VIEW ================= -->
+<!-- ================= HOME VIEW (4 FOCUSED SECTIONS) ================= -->
 <div id="view-home">
 
+  <!-- SECTION 1: CENTERED HERO WITH SUBTLE ANIMATED SOUNDWAVE -->
   <section class="hero" id="top">
     <svg class="hero-swirls" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-      <path d="M-40 520 C 200 380, 380 640, 620 470 S 1040 300, 1480 430" fill="none" stroke="#fff" stroke-opacity=".10" stroke-width="40"/>
-      <path d="M-40 140 C 260 40, 420 260, 700 150 S 1100 -20, 1480 120" fill="none" stroke="#fff" stroke-opacity=".07" stroke-width="28"/>
-      <path d="M900 640 C 980 520, 1160 520, 1220 420 S 1400 260, 1480 300" fill="none" stroke="#A9C4E2" stroke-opacity=".18" stroke-width="18"/>
-      <circle cx="1240" cy="140" r="90" fill="none" stroke="#A9C4E2" stroke-opacity=".16" stroke-width="14"/>
-      <circle cx="1240" cy="140" r="48" fill="none" stroke="#A9C4E2" stroke-opacity=".12" stroke-width="10"/>
+      <path d="M-40 520 C 200 380, 380 640, 620 470 S 1040 300, 1480 430" fill="none" stroke="#fff" stroke-opacity=".09" stroke-width="40"/>
+      <path d="M-40 140 C 260 40, 420 260, 700 150 S 1100 -20, 1480 120" fill="none" stroke="#fff" stroke-opacity=".06" stroke-width="28"/>
+      <circle cx="1220" cy="140" r="92" fill="none" stroke="#A9C4E2" stroke-opacity=".14" stroke-width="14"/>
+      <circle cx="220" cy="480" r="64" fill="none" stroke="#A9C4E2" stroke-opacity=".11" stroke-width="10"/>
     </svg>
-    <div class="wrap hero-inner">
-      <div class="hero-text">
-        <span class="pill">CAPSTONE 2026–2027 · ALEXANDRIA STEM SCHOOL</span>
-        <h1>Every cry heard.<br>Every second counts.</h1>
-        <p>NeoGuardian listens to newborns in the ward, tells the nurse how urgent each cry is, and suggests what to check first — using feed and diaper times, not guesses.</p>
-        <div class="hero-actions">
-          <a class="btn" href="#how">See how it works</a>
-          <a class="btn btn-blue" href="#dashboard">Open nurse dashboard</a>
-        </div>
+
+    <div class="wrap hero-inner hero-centered">
+      <div class="hero-kicker hero-enter" style="--delay:0ms">
+        <span>Capstone 2026–2027</span>
+        <span aria-hidden="true">·</span>
+        <span>Alexandria STEM School</span>
       </div>
-      <div class="hero-cards" aria-label="Example alerts">
-        <div class="alert">
-          <div class="alert-head"><span class="alert-title">Bed 3 · Baby B3</span><span class="pill red">URGENT</span></div>
-          <p><b>Urgent cry detected · AI urgency 82%</b></p>
-          <p class="muted">Also check: maybe hungry — last fed 2.8 h ago</p>
-          <div class="row"><button class="sq dark" type="button">On my way</button><button class="sq" type="button">Resolved</button></div>
-        </div>
-        <div class="alert alert-mini">
-          <div><div class="alert-title" style="font-size:18px">Bed 5 · Baby B5</div><div class="muted">Just fed: maybe needs burping</div></div>
-          <span class="pill yellow">NOT URGENT</span>
+
+      <h1 class="hero-enter" style="--delay:90ms">Every cry heard.<br>Every second counts.</h1>
+
+      <p class="hero-lead hero-enter" style="--delay:180ms">
+        NeoGuardian listens to newborns in the ward, rates how urgent each cry is, and tells the nurse what to check first using feed and diaper times.
+      </p>
+
+      <div class="hero-actions hero-enter" style="--delay:270ms">
+        <a class="btn" href="#dashboard">Open nurse dashboard</a>
+        <a class="btn btn-blue" href="#how">See how it works</a>
+      </div>
+
+      <div class="soundwave-stage hero-enter" style="--delay:360ms" aria-hidden="true">
+        <div class="wave-bars">
+          <span style="--h:.34;--d:0ms"></span>
+          <span style="--h:.58;--d:140ms"></span>
+          <span style="--h:.82;--d:280ms"></span>
+          <span style="--h:.46;--d:420ms"></span>
+          <span style="--h:.96;--d:120ms"></span>
+          <span style="--h:.68;--d:260ms"></span>
+          <span style="--h:.40;--d:400ms"></span>
+          <span style="--h:.88;--d:80ms"></span>
+          <span style="--h:1;--d:220ms"></span>
+          <span style="--h:.64;--d:360ms"></span>
+          <span style="--h:.90;--d:160ms"></span>
+          <span style="--h:.48;--d:300ms"></span>
+          <span style="--h:.76;--d:440ms"></span>
+          <span style="--h:.54;--d:200ms"></span>
+          <span style="--h:.32;--d:340ms"></span>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="wrap section">
-    <div class="grid g2">
-      <div class="panel"><span class="panel-label">THE PROBLEM</span>
-        <p>In a newborn ward, one nurse may look after many babies at the same time. A cry at the far end of the room can wait too long — and not every cry needs the same speed.</p>
-      </div>
-      <div class="panel"><span class="panel-label">OUR IDEA</span>
-        <p>NeoGuardian listens for the nurse. It hears a cry, rates how urgent it is, and sends one clear alert to her phone with what to check first.</p>
-      </div>
-    </div>
-  </section>
-
+  <!-- SECTION 2: HOW IT WORKS & SAFETY -->
   <section class="wrap section" id="how">
-    <div class="section-head">
-      <h2>Three layers, one alert</h2>
-      <p>Each layer answers one simple question, so nurses can trust and understand every alert.</p>
+    <div class="section-head" data-reveal="up">
+      <h2>Three layers, one clear alert</h2>
+      <p>In a busy newborn ward, one nurse watches many cribs at once. Each layer answers one simple question so every alert is easy to trust.</p>
     </div>
-    <div class="grid g3">
-      <div class="panel white layer"><span class="panel-label">LAYER 1</span>
-        <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 20v8M16 14v20M24 8v32M32 14v20M40 20v8" stroke="#0E2F5E" stroke-width="4" stroke-linecap="round"/></svg>
+
+    <div class="grid g3" data-stagger="110">
+      <div class="panel white layer" data-reveal="up">
+        <span class="panel-label">01 · DETECT</span>
+        <svg width="44" height="44" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 20v8M16 14v20M24 8v32M32 14v20M40 20v8" stroke="#0E2F5E" stroke-width="4" stroke-linecap="round"/></svg>
         <h3>Is it a cry?</h3>
-        <p>A pretrained sound model (YAMNet) listens every half second and separates baby cries from talking, alarms and silence.</p>
-        <span class="chip">No training needed · AUC ≈ 0.97</span>
+        <p>YAMNet listens every half second and separates newborn cries from ward voices, monitor beeps, and quiet.</p>
+        <div class="meta-line">No training needed <span aria-hidden="true">·</span> AUC ≈ 0.97</div>
       </div>
-      <div class="panel white layer"><span class="panel-label">LAYER 2</span>
-        <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6 L44 40 H4 Z" fill="none" stroke="#0E2F5E" stroke-width="4" stroke-linejoin="round"/><path d="M24 18v10" stroke="#0E2F5E" stroke-width="4" stroke-linecap="round"/><circle cx="24" cy="34" r="2.6" fill="#0E2F5E"/></svg>
+
+      <div class="panel white layer" data-reveal="up">
+        <span class="panel-label">02 · TRIAGE</span>
+        <svg width="44" height="44" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6 L44 40 H4 Z" fill="none" stroke="#0E2F5E" stroke-width="4" stroke-linejoin="round"/><path d="M24 18v10" stroke="#0E2F5E" stroke-width="4" stroke-linecap="round"/><circle cx="24" cy="34" r="2.6" fill="#0E2F5E"/></svg>
         <h3>How urgent?</h3>
-        <p>Two models vote — YAMNet and our own CNN — to rate the cry as urgent (pain, fear) or not urgent (needs).</p>
-        <span class="chip">Balanced accuracy ≈ 85% · locked test</span>
+        <p>Two models vote — YAMNet and our custom CNN — to rate distress as urgent (pain, fear) or not urgent (needs).</p>
+        <div class="meta-line">Balanced accuracy ≈ 85% <span aria-hidden="true">·</span> Locked test</div>
       </div>
-      <div class="panel white layer"><span class="panel-label">LAYER 3</span>
-        <svg width="48" height="48" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="none" stroke="#0E2F5E" stroke-width="4"/><path d="M24 13v12l8 5" fill="none" stroke="#0E2F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+
+      <div class="panel white layer" data-reveal="up">
+        <span class="panel-label">03 · CONTEXT</span>
+        <svg width="44" height="44" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="18" fill="none" stroke="#0E2F5E" stroke-width="4"/><path d="M24 13v12l8 5" fill="none" stroke="#0E2F5E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         <h3>What to check first?</h3>
-        <p>Clear rules use the nurse's taps — time since the last feed and diaper change — to suggest a likely reason.</p>
-        <span class="chip">Every setting adjustable per baby</span>
+        <p>Nurse tap logs track time since last feed and diaper change to suggest the most likely care step.</p>
+        <div class="meta-line">Adjustable per baby <span aria-hidden="true">·</span> Clear rules</div>
       </div>
     </div>
-    <div class="safety">
+
+    <div class="safety" data-reveal="up">
       <strong>SAFETY RULES</strong>
       <span>Every cry alerts the nurse</span>
       <span>AI unsure → treated as urgent</span>
@@ -125,88 +140,321 @@
     </div>
   </section>
 
+  <!-- SECTION 3: SYSTEM FLOW & NURSE PREVIEW -->
   <section class="wrap section" id="system">
-    <div class="section-head"><h2>From crib to nurse's phone</h2></div>
-    <div class="chain">
-      <span class="node">Baby</span><span aria-hidden="true">→</span>
-      <span class="node">Microphone</span><span aria-hidden="true">→</span>
-      <span class="node blue">Raspberry Pi Pico 2 W</span><span aria-hidden="true">→</span>
-      <span class="node">Wi-Fi</span><span aria-hidden="true">→</span>
-      <span class="node dark">Laptop AI server</span><span aria-hidden="true">→</span>
-      <span class="node">Nurse's phone</span>
+    <div class="section-head" data-reveal="up">
+      <h2>From crib to nurse's phone</h2>
+      <p>Audio stays inside the hospital's local Wi-Fi network — no internet required and no baby audio sent to the cloud.</p>
     </div>
-    <p class="chain-note center muted">Sound stays on the hospital's local network. No internet needed, and no baby audio sent to the cloud.</p>
-  </section>
 
-  <section class="wrap section" id="phone">
-    <div class="section-head"><h2>What the nurse sees</h2></div>
-    <div class="phone-row">
-      <div class="phone" aria-label="Phone alert example">
-        <div class="phone-top"><span>NEOGUARDIAN</span><span class="chip" style="font-family:var(--body);font-size:13px;padding:3px 10px;color:var(--ink);letter-spacing:0">Ward A</span></div>
+    <div class="chain" data-chain>
+      <span class="node chain-step">Baby</span>
+      <span class="chain-arrow chain-step" aria-hidden="true">→</span>
+      <span class="node chain-step">Microphone</span>
+      <span class="chain-arrow chain-step" aria-hidden="true">→</span>
+      <span class="node blue chain-step">Raspberry Pi Pico 2 W</span>
+      <span class="chain-arrow chain-step" aria-hidden="true">→</span>
+      <span class="node chain-step">Wi-Fi</span>
+      <span class="chain-arrow chain-step" aria-hidden="true">→</span>
+      <span class="node dark chain-step">Laptop AI server</span>
+      <span class="chain-arrow chain-step" aria-hidden="true">→</span>
+      <span class="node chain-step">Nurse's phone</span>
+    </div>
+
+    <div class="phone-row" id="phone">
+      <div class="phone" data-reveal="left" aria-label="Phone alert example">
+        <div class="phone-top"><span>NEOGUARDIAN</span><span class="phone-ward">Ward A</span></div>
         <div class="phone-body">
-          <div class="baby red"><span class="pill red">URGENT · BED 1</span>
-            <div class="alert-title" style="font-size:24px">Urgent cry detected</div>
-            <div class="meter-label">Pain or fear likely · AI urgency 82%</div>
-            <div class="meter"><div style="width:82%"></div></div>
-            <div class="facts"><div class="fact"><small>LAST FED</small><b>2.8 h ago</b></div><div class="fact"><small>LAST DIAPER</small><b>1.1 h ago</b></div></div>
-            <div class="tip">Also check: maybe hungry</div>
-            <div class="baby-actions"><button class="sq dark" type="button">On my way</button><button class="sq" type="button">Resolved</button></div>
+          <div class="baby red" id="preview-card">
+            <span class="pill red" id="preview-pill">URGENT · BED 1</span>
+            <div class="alert-title" style="font-size:24px" id="preview-title">Urgent cry detected</div>
+            <div class="meter-label" id="preview-meter-label">Pain or fear likely · AI urgency 82%</div>
+            <div class="meter preview-meter" id="preview-meter"><div style="--target:0.82"></div></div>
+            <div class="facts">
+              <div class="fact"><small>LAST FED</small><b>2.8 h ago</b></div>
+              <div class="fact"><small>LAST DIAPER</small><b>1.1 h ago</b></div>
+            </div>
+            <div class="tip" id="preview-tip">Also check: maybe hungry</div>
+            <div class="baby-actions">
+              <button class="sq dark" type="button" id="preview-ack">On my way</button>
+              <button class="sq" type="button" id="preview-resolve">Resolved</button>
+            </div>
           </div>
         </div>
       </div>
-      <ul class="phone-list">
-        <li><b>One alert per cry</b>, colored by urgency.</li>
-        <li><b>The likely reason</b> comes from feed and diaper times.</li>
-        <li><b>One tap</b> to say "On my way" or "Resolved".</li>
-        <li><a href="#dashboard">Try the live dashboard →</a></li>
-      </ul>
+
+      <div class="phone-copy" data-stagger="100">
+        <h3 data-reveal="up">What the nurse sees</h3>
+        <ul class="phone-list">
+          <li data-reveal="up"><b>One alert per cry</b>, clearly color-coded by urgency level.</li>
+          <li data-reveal="up"><b>Actionable context</b> pulled straight from feed and diaper logs.</li>
+          <li data-reveal="up"><b>One-tap response</b> to acknowledge or mark the alert resolved.</li>
+        </ul>
+        <div class="phone-cta" data-reveal="up">
+          <a class="btn btn-dark" href="#dashboard">Try the live dashboard →</a>
+        </div>
+      </div>
     </div>
   </section>
 
+  <!-- SECTION 4: TESTED RESULTS & TEAM -->
   <section class="wrap section" id="results">
-    <div class="section-head">
+    <div class="section-head" data-reveal="up">
       <h2>Tested honestly</h2>
-      <p>Locked test: 122 recordings the model never saw.</p>
+      <p>Evaluated on a locked test set of 122 unseen newborn cry recordings.</p>
     </div>
-    <div class="grid g4">
-      <div class="stat"><span class="stat-num">85%</span><span class="stat-label">Balanced accuracy (official)</span><span class="stat-sub">Clean final test · AUC 0.93 · target was 80% or more</span></div>
-      <div class="stat"><span class="stat-num">88%</span><span class="stat-label">Final model · second look</span><span class="stat-sub">Same 122 files · AUC 0.95 · not a clean test</span></div>
-      <div class="stat"><span class="stat-num">41/44</span><span class="stat-label">Urgent cries caught</span><span class="stat-sub">3 missed · 13 false alarms in 78 (final model)</span></div>
-      <div class="stat todo"><span class="stat-num">[__ s]</span><span class="stat-label">Cry to phone alert</span><span class="stat-sub">From 30 timed tests</span></div>
+
+    <div class="grid g4" data-stagger="100">
+      <div class="stat" data-reveal="up">
+        <span class="stat-num" data-count="85" data-suffix="%">85%</span>
+        <span class="stat-label">Balanced accuracy (official)</span>
+        <span class="stat-sub">Clean final test · AUC 0.93 · Target ≥ 80%</span>
+      </div>
+      <div class="stat" data-reveal="up">
+        <span class="stat-num" data-count="88" data-suffix="%">88%</span>
+        <span class="stat-label">Final model · second look</span>
+        <span class="stat-sub">Same 122 files · AUC 0.95 · Post-tuning check</span>
+      </div>
+      <div class="stat" data-reveal="up">
+        <span class="stat-num" data-count="41" data-suffix="/44">41/44</span>
+        <span class="stat-label">Urgent cries caught</span>
+        <span class="stat-sub">3 missed · 13 false alarms in 78 non-urgent</span>
+      </div>
+      <div class="stat todo" data-reveal="up">
+        <span class="stat-num">[__ s]</span>
+        <span class="stat-label">Cry to phone alert</span>
+        <span class="stat-sub">From 30 timed end-to-end ward tests</span>
+      </div>
     </div>
-    <div class="grid g2" style="margin-top:58px">
-      <div class="panel"><span class="panel-label">HONEST NOTES</span>
+
+    <div class="grid g2 results-notes" data-stagger="120">
+      <div class="panel" data-reveal="up">
+        <span class="panel-label">HONEST NOTES</span>
         <ul>
-          <li>The test set is small, so the real value may be a few percent higher or lower.</li>
-          <li>The 88% number is a second look at the same test files, after we changed the model and chose its threshold on validation files. It is not a clean test, so the official result stays 85%.</li>
-          <li>Inside each single data source, balanced accuracy is about 80%. With 5-fold cross-validation on all data it is 84%.</li>
-          <li>Next step: a new clean test set of 50–100 cries before we claim any new number.</li>
-          <li>Near-duplicate recordings were found and kept in the same split, so the test never saw copies.</li>
+          <li>Small test set: true accuracy may vary by a few percent, and the 88% re-check stays secondary to the official 85% score.</li>
+          <li>Cross-validation across all data reached 84% (~80% within each single source), with near-duplicates strictly isolated by split.</li>
+          <li>Next milestone: collect a fresh 50–100 cry test set before reporting updated metrics.</li>
         </ul>
       </div>
-      <div class="panel"><span class="panel-label">WHY URGENCY, NOT TRANSLATION</span>
-        <p>A 2024 study found that neither people nor AI could reliably tell <em>why</em> a baby cries from the sound alone — but a cry does show how distressed the baby is. So NeoGuardian rates urgency, and uses feed and diaper times for the likely reason.</p>
+      <div class="panel" data-reveal="up">
+        <span class="panel-label">WHY URGENCY, NOT TRANSLATION</span>
+        <p>A 2024 study showed neither humans nor AI can reliably identify <em>why</em> a baby cries from sound alone — but acoustics do reflect distress. NeoGuardian rates urgency from sound and pairs it with feed and diaper times.</p>
         <p class="cite">Lockhart-Baron et al., Communications Psychology, 2024</p>
       </div>
     </div>
+
+    <div class="team-block" id="team">
+      <div class="section-head" data-reveal="up">
+        <h2>The team</h2>
+        <p>Alexandria STEM School · Grade 12 · Group 12324 · Semester 1, 2026–2027</p>
+      </div>
+      <div class="grid g3 team-grid" data-stagger="110">
+        <div class="member" data-reveal="up"><div class="avatar" aria-hidden="true">MS</div><span class="member-name">Mohamed Serag</span><span class="muted">[ROLE]</span></div>
+        <div class="member" data-reveal="up"><div class="avatar" aria-hidden="true">SH</div><span class="member-name">Sadin Hossam</span><span class="muted">[ROLE]</span></div>
+        <div class="member" data-reveal="up"><div class="avatar" aria-hidden="true">ZM</div><span class="member-name">Zyad Mohamed</span><span class="muted">[ROLE]</span></div>
+      </div>
+    </div>
   </section>
 
-  <section class="wrap section" id="team">
-    <div class="section-head"><h2>The team</h2></div>
-    <div class="grid g3" style="gap:24px">
-      <div class="member"><div class="avatar" aria-hidden="true">MS</div><span class="member-name">Mohamed Serag</span><span class="muted">[ROLE]</span></div>
-      <div class="member"><div class="avatar" aria-hidden="true">SH</div><span class="member-name">Sadin Hossam</span><span class="muted">[ROLE]</span></div>
-      <div class="member"><div class="avatar" aria-hidden="true">ZM</div><span class="member-name">Zyad Mohamed</span><span class="muted">[ROLE]</span></div>
+</div>
+
+<!-- ================= SIGN IN / SIGN UP VIEW ================= -->
+<div id="view-auth" hidden>
+  <div class="dash-bar">
+    <div class="wrap dash-bar-inner">
+      <a class="btn btn-small" href="#top">← Home</a>
+      <span class="pill" style="background:var(--panel)">Caregiver account</span>
+      <a class="btn btn-small" href="#patients">Patient profiles →</a>
     </div>
-    <p class="center muted" style="margin-top:28px;font-size:17px">Alexandria STEM School · Grade 12 · Group 12324 · Semester 1, 2026–2027</p>
-  </section>
+  </div>
+
+  <div class="wrap auth-wrap">
+    <div class="panel white auth-card" id="auth-signed-out">
+      <span class="panel-label" id="auth-panel-label">SIGN IN</span>
+      <div class="auth-tabs" role="tablist" aria-label="Account mode">
+        <button class="auth-tab is-active" type="button" role="tab" aria-selected="true" id="tab-signin">Sign in</button>
+        <button class="auth-tab" type="button" role="tab" aria-selected="false" id="tab-signup">Create account</button>
+      </div>
+
+      <h1 class="auth-title" id="auth-heading">Welcome back</h1>
+      <p class="muted" id="auth-sub">Sign in to create and manage newborn patient profiles across sessions.</p>
+
+      <button class="btn google-btn" type="button" id="google-signin-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
+          <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.7-2.4 3.6v3h3.9c2.3-2.1 3.5-5.2 3.5-8.8z"/>
+          <path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-3l-3.9-3c-1.1.7-2.5 1.2-4.1 1.2-3.1 0-5.8-2.1-6.7-5H1.3v3.1C3.3 21.3 7.3 24 12 24z"/>
+          <path fill="#FBBC05" d="M5.3 14.2c-.2-.7-.4-1.5-.4-2.2s.1-1.5.4-2.2V6.7H1.3C.5 8.3 0 10.1 0 12s.5 3.7 1.3 5.3l4-3.1z"/>
+          <path fill="#EA4335" d="M12 4.8c1.8 0 3.3.6 4.6 1.8l3.4-3.4C17.9 1.2 15.2 0 12 0 7.3 0 3.3 2.7 1.3 6.7l4 3.1c.9-2.9 3.6-5 6.7-5z"/>
+        </svg>
+        <span>Continue with Google</span>
+      </button>
+
+      <div class="auth-divider"><span>or use email and password</span></div>
+
+      <form id="auth-form" class="auth-form" novalidate>
+        <div id="signup-fields" class="signup-fields" hidden>
+          <div class="form-row">
+            <label for="auth-name">Full name</label>
+            <input class="field" id="auth-name" type="text" maxlength="80" placeholder="e.g. Nurse Sara Ahmed" autocomplete="name">
+          </div>
+          <div class="form-row">
+            <label for="auth-ward">Assigned ward</label>
+            <input class="field" id="auth-ward" type="text" maxlength="60" value="Ward A" placeholder="Ward A">
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="auth-email">Email address</label>
+          <input class="field" id="auth-email" type="email" maxlength="160" placeholder="nurse@hospital.org" autocomplete="email" required>
+        </div>
+        <div class="form-row">
+          <label for="auth-password">Password</label>
+          <input class="field" id="auth-password" type="password" minlength="6" maxlength="128" placeholder="At least 6 characters" autocomplete="current-password" required>
+        </div>
+        <div class="form-feedback" id="auth-feedback" role="status" aria-live="polite" hidden></div>
+        <button class="btn btn-dark" type="submit" id="auth-submit-btn">Sign in</button>
+      </form>
+    </div>
+
+    <div class="panel white auth-card" id="auth-verify-card" hidden>
+      <span class="panel-label">VERIFY EMAIL</span>
+      <h1 class="auth-title">Check your inbox</h1>
+      <p class="muted" id="auth-verify-text">We sent a verification link to your email address. Verify your email before saving patient profiles.</p>
+      <div class="form-feedback" id="verify-feedback" role="status" aria-live="polite" hidden></div>
+      <div class="row">
+        <button class="btn btn-dark" type="button" id="verify-refresh-btn">I verified — continue</button>
+        <button class="btn" type="button" id="verify-resend-btn">Resend link</button>
+        <button class="sq" type="button" id="verify-signout-btn">Sign out</button>
+      </div>
+    </div>
+
+    <div class="panel white auth-card" id="auth-signed-in" hidden>
+      <span class="panel-label">SIGNED IN</span>
+      <h1 class="auth-title" id="signed-in-name">Caregiver</h1>
+      <p class="muted" id="signed-in-meta"></p>
+      <div class="row">
+        <a class="btn btn-dark" href="#patients">Manage patient profiles</a>
+        <a class="btn btn-blue" href="#dashboard">Open nurse dashboard</a>
+      </div>
+      <div>
+        <button class="sq" type="button" id="auth-signout-btn">Sign out</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= PATIENT PROFILES VIEW ================= -->
+<div id="view-patients" hidden>
+  <div class="dash-bar">
+    <div class="wrap dash-bar-inner">
+      <a class="btn btn-small" href="#dashboard">← Nurse dashboard</a>
+      <span class="pill" style="background:var(--panel)" id="patients-ward-badge">Ward A · Patient profiles</span>
+      <div class="dash-tools">
+        <span class="chip" id="patients-user-chip">Not signed in</span>
+        <a class="sq" id="patients-auth-link" href="#auth" style="display:inline-flex;align-items:center;text-decoration:none">Sign in</a>
+        <button class="sq" type="button" id="patients-signout-btn" hidden>Sign out</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap dash-main">
+    <div class="panel white auth-gate" id="patients-auth-gate">
+      <span class="panel-label">SIGN IN REQUIRED</span>
+      <h2>Sign in to manage patient profiles</h2>
+      <p class="muted">Create a caregiver account or sign in with Google to save newborn profiles, feeding intervals, and bed assignments across sessions.</p>
+      <div class="row">
+        <a class="btn btn-dark" href="#auth">Sign in or create account</a>
+        <a class="btn" href="#dashboard">Back to live dashboard</a>
+      </div>
+    </div>
+
+    <div class="patients-workspace" id="patients-workspace" hidden>
+      <div class="panel white patient-form-panel">
+        <span class="panel-label" id="patient-form-label">NEW PATIENT</span>
+        <h2 id="patient-form-heading">Add patient profile</h2>
+        <form id="patient-form" class="auth-form" novalidate>
+          <input type="hidden" id="patient-edit-id" value="">
+          <div class="form-row">
+            <label for="patient-name">Baby name or ID</label>
+            <input class="field" id="patient-name" type="text" maxlength="80" placeholder="e.g. Baby B3 · Layla" required>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label for="patient-bed">Assigned bed</label>
+              <select class="field" id="patient-bed">
+                <option value="Bed 1">Bed 1 (Live mic)</option>
+                <option value="Bed 2">Bed 2</option>
+                <option value="Bed 3">Bed 3</option>
+                <option value="Bed 4">Bed 4</option>
+                <option value="Bed 5">Bed 5</option>
+                <option value="Bed 6">Bed 6</option>
+                <option value="Bed 7">Bed 7</option>
+                <option value="Bed 8">Bed 8</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="patient-age">Age (days)</label>
+              <input class="field" id="patient-age" type="number" min="0" max="365" step="1" value="3" required>
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label for="patient-weight">Weight (kg)</label>
+              <input class="field" id="patient-weight" type="number" min="0.4" max="12" step="0.1" value="3.2" required>
+            </div>
+            <div class="form-row">
+              <label for="patient-feed">Feed every (h)</label>
+              <input class="field" id="patient-feed" type="number" min="1" max="8" step="0.5" value="2.5" required>
+            </div>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-row">
+              <label for="patient-diaper">Diaper check (h)</label>
+              <input class="field" id="patient-diaper" type="number" min="1" max="12" step="0.5" value="3" required>
+            </div>
+            <div class="form-row">
+              <label for="patient-status">Care status</label>
+              <select class="field" id="patient-status">
+                <option value="active">Active</option>
+                <option value="discharged">Discharged</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="patient-notes">Care notes (optional)</label>
+            <textarea class="field field-area" id="patient-notes" maxlength="500" rows="3" placeholder="Allergies, feeding preferences, or calming notes"></textarea>
+          </div>
+          <div class="form-feedback" id="patient-form-msg" role="status" aria-live="polite" hidden></div>
+          <div class="row">
+            <button class="btn btn-dark" type="submit" id="patient-save-btn">Save patient profile</button>
+            <button class="sq" type="button" id="patient-cancel-btn" hidden>Cancel edit</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="patient-list-panel">
+        <div class="patient-list-head">
+          <div>
+            <h2>Patient directory</h2>
+            <p class="muted" id="patients-count-line">0 active · 0 total</p>
+          </div>
+          <div class="filter-bar" role="group" aria-label="Filter patient profiles">
+            <button class="sq dark" type="button" data-pfilter="all">All</button>
+            <button class="sq" type="button" data-pfilter="active">Active</button>
+            <button class="sq" type="button" data-pfilter="discharged">Discharged</button>
+          </div>
+        </div>
+        <div class="form-feedback" id="patients-list-error" role="alert" hidden></div>
+        <div class="patient-cards" id="patient-cards"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ================= DASHBOARD VIEW ================= -->
 <div id="view-dashboard" hidden>
   <div class="dash-bar">
     <div class="wrap dash-bar-inner">
-      <span class="pill" style="background:var(--panel)">Ward A · Newborn room</span>
+      <span class="pill" style="background:var(--panel)" id="dash-ward-pill">Ward A · Newborn room</span>
       <div class="dash-tools">
         <span class="chip" id="conn">○ AI not connected</span>
         <span class="dash-tools" id="api-box">
@@ -214,6 +462,7 @@
           <button class="sq" type="button" id="api-save">Connect</button>
         </span>
         <button class="sq" type="button" id="demo-btn" style="background:var(--panel)">Demo data</button>
+        <a class="sq" id="dash-patients-link" href="#patients" style="display:inline-flex;align-items:center;text-decoration:none">Patient profiles</a>
       </div>
     </div>
   </div>
@@ -262,7 +511,7 @@
   <div class="wrap footer-inner">
     <div>
       <div class="footer-brand">NEOGUARDIAN</div>
-      <div style="color:var(--pill)">Keywords: [X] · [X] · [X] · [X] · [X]</div>
+      <div class="footer-meta">Newborn Cry Triage · Local Ward AI · Capstone 2026–2027</div>
     </div>
     <div class="footer-links">
       <a href="#results">Literature cited</a>
@@ -272,6 +521,7 @@
   </div>
 </footer>
 
+<script src="js/firebase-bundle.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

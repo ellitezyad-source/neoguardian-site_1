@@ -1,0 +1,134 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated nurse or caregiver account profile.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "description": "Firebase Auth UID of the account owner.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Caregiver full name.",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Caregiver email address.",
+          "minLength": 3,
+          "maxLength": 160
+        },
+        "wardName": {
+          "type": "string",
+          "description": "Assigned hospital ward name.",
+          "minLength": 1,
+          "maxLength": 60
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server creation timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server last-update timestamp."
+        }
+      },
+      "required": ["uid", "displayName", "email", "wardName", "createdAt", "updatedAt"]
+    },
+    "PatientProfile": {
+      "title": "PatientProfile",
+      "description": "Newborn patient profile managed by an authenticated caregiver.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "description": "Firebase Auth UID of the owning caregiver.",
+          "minLength": 1,
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "babyName": {
+          "type": "string",
+          "description": "Patient name or label.",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "bedNumber": {
+          "type": "string",
+          "description": "Assigned crib or bed identifier.",
+          "minLength": 1,
+          "maxLength": 24
+        },
+        "ageDays": {
+          "type": "number",
+          "description": "Newborn age in days (0 to 365)."
+        },
+        "weightKg": {
+          "type": "number",
+          "description": "Newborn weight in kilograms (0.4 to 12)."
+        },
+        "feedingIntervalHours": {
+          "type": "number",
+          "description": "Expected feeding interval in hours (1 to 8)."
+        },
+        "diaperIntervalHours": {
+          "type": "number",
+          "description": "Expected diaper check interval in hours (1 to 12)."
+        },
+        "medicalNotes": {
+          "type": "string",
+          "description": "Care notes and sensitivities.",
+          "minLength": 0,
+          "maxLength": 500
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "discharged"],
+          "description": "Current care status."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server creation timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server last-update timestamp."
+        }
+      },
+      "required": [
+        "ownerId",
+        "babyName",
+        "bedNumber",
+        "ageDays",
+        "weightKg",
+        "feedingIntervalHours",
+        "diaperIntervalHours",
+        "medicalNotes",
+        "status",
+        "createdAt",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Private caregiver profile documents owned strictly by each authenticated user."
+    },
+    "/patients/{patientId}": {
+      "schema": { "$ref": "#/entities/PatientProfile" },
+      "description": "Patient profile documents created and managed by their owning caregiver."
+    }
+  }
+}
